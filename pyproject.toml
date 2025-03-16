@@ -1,6 +1,6 @@
 [project]
 name = "ghcs"
-version = "1.0.0"
+version = "1.0.1"
 description = "GitHub Code Search CLI with file downloading capability."
 authors = [{ name = "Md. Sazzad Hissain Khan", email = "hissain.khan@gmail.com" }]
 license = { text = "MIT" }
