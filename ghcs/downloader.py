@@ -14,8 +14,10 @@ def download_file(url, path, token=None, download_dir="codes"):
             with open(save_path, "w", encoding="utf-8") as f:
                 f.write(response.text)
             print(f"Downloaded: {save_path}")
+            return save_path
         else:
             print(f"Failed to download {url}")
     except Exception as e:
         print(f"Error: {e}")
         print(f"Failed to download {url}")
+        return None

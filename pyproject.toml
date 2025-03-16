@@ -1,6 +1,6 @@
 [project]
 name = "ghcs"
-version = "0.1.1"
+version = "1.0.0"
 description = "GitHub Code Search CLI with file downloading capability."
 authors = [{ name = "Md. Sazzad Hissain Khan", email = "hissain.khan@gmail.com" }]
 license = { text = "MIT" }
@@ -8,7 +8,9 @@ readme = "README.md"
 requires-python = ">=3.7"
 dependencies = [
     "requests",
-    "python-dotenv"
+    "python-dotenv",
+    "google-generativeai",
+    "nbconvert"
 ]
 dynamic = ["classifiers"]
 

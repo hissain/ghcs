@@ -6,6 +6,7 @@
 
 - Search GitHub code with various filters (query, user, repository, language, path and so on).
 - Download matched files directly from GitHub.
+- Extract specific code sections from downloaded files and refine using AI (Gemini model)
 - Easy to use CLI interface.
 
 ## Installation
@@ -47,6 +48,19 @@ ghcs 'search_term' --user 'username' --repo 'username/repo' --language 'python' 
 ghcs 'search_term' --download --token YOUR_GITHUB_TOKEN
 ```
 
+### Extract Code with AI
+
+To extract specific code sections from downloaded files using the Gemini AI model:
+Subsequent request provided by --remark will be applied by Gemini. The final code can be printed on Console or saved at location provided by --output-file.
+
+Example,
+
+```bash
+ghcs "LoRA def train()" --user hissain --download --remark "Extract the training function for LoRA with proper imports" --output-file extracted_code.py --verbose
+```
+
+Note: You need to set the `GEMINI_API_KEY` in your environment variables or `.env` file.
+
 ### Arguments
 
 __Positional:__
@@ -64,9 +78,13 @@ __Optional:__
 * `-d, --download:` Download matched files.
 * `-dd, --download-dir:` Download directory for downloading the matched files.
 * `-v, --verbose`: Verbose logging for matched files.
+* `-r, --remark:` Description of what should be extracted from the downloaded files.
+* `-o, --output-file:` Output file to save the extracted code (default: print to console).
+* `-e, --extensions:` Comma-separated list of file extensions to consider for extraction (e.g., .py,.js).
 * `-h, --help`: Show the help menu and exit.
 
 GITHUB_TOKEN can be generated from https://github.com/settings/tokens
+GEMINI_API_KEY can be obtained from Google AI Studio.
 
 ### Example
 ```bash
@@ -79,6 +97,11 @@ ghcs 'def train(' -l 'python' -p 'llama/train' -d -m 10
 
 ```bash
 ghcs "def train()" --path llm --max-results 3 --download
+```
+
+With AI-powered code extraction:
+```bash
+ghcs "def train()" --path llm --download --remark "extract only the forward pass function" --output-file forward_pass.py
 ```
 
 ## License

@@ -2,7 +2,7 @@ import requests
 
 GITHUB_API_URL = "https://api.github.com/search/code"
 
-def search_github(query, user=None, repo=None, language=None, path=None, max_results=None, token=None):
+def search_github(query, user=None, repo=None, language=None, path=None, max_results=None, token=None, verbose=False):
     headers = {"Authorization": f"token {token}"}
     params = {"q": query}
     
@@ -17,9 +17,11 @@ def search_github(query, user=None, repo=None, language=None, path=None, max_res
     if max_results:
         params["per_page"] = max_results
 
-    print(f"Sending request to GitHub API with params: {params}")
+    if verbose:
+        print(f"Sending request to GitHub API with params: {params}")
     response = requests.get(GITHUB_API_URL, headers=headers, params=params)
     response.raise_for_status()
     results = response.json().get("items", [])
-    print(f"GitHub API returned {len(results)} items.")
+    if verbose:
+        print(f"GitHub API returned {len(results)} items.")
     return results

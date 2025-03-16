@@ -2,9 +2,13 @@ from setuptools import setup, find_packages
 
 setup(
     name="ghcs",
-    version="0.1.1",
+    version="1.0.0",
     packages=find_packages(),
-    install_requires=["requests", "python-dotenv"],
+    install_requires=["requests",
+        "python-dotenv",
+        "google-generativeai",
+        "nbconvert"
+    ],
     entry_points={"console_scripts": ["ghcs=ghcs.cli:main"]},
     author="Md. Sazzad Hissain Khan",
     author_email='hissain.khan@gmail.com',
