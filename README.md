@@ -71,7 +71,7 @@ ghcs 'def main' --language 'python' --user 'hissain' --path '*.py' --download --
 ```
 
 ```bash
-ghcs "def train()" path llm --max-results 3 --download
+ghcs "def train()" --path llm --max-results 3 --download
 ```
 
 ## License

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ghcs"
+version = "0.1.0"
+description = "GitHub Code Search CLI with file downloading capability."
+authors = [{ name = "Md. Sazzad Hissain Khan", email = "hissain.khan@gmail.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "requests",
+    "python-dotenv"
+]
+
+[project.urls]
+Homepage = "https://github.com/hissain/ghcs"
+Repository = "https://github.com/hissain/ghcs"
+Issues = "https://github.com/hissain/ghcs/issues"
+
+[project.scripts]
+ghcs = "ghcs.cli:main"
+
+[tool.setuptools]
+packages = ["ghcs"]
+
+[tool.setuptools.package-data]
+ghcs = ["*.md", "*.txt"]
