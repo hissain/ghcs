@@ -4,7 +4,7 @@
 
 ## Features
 
-- Search GitHub code with various filters (query, user, repository, language, path).
+- Search GitHub code with various filters (query, user, repository, language, path and so on).
 - Download matched files directly from GitHub.
 - Easy to use CLI interface.
 
@@ -45,20 +45,23 @@ ghcs 'search_term' --download --token YOUR_GITHUB_TOKEN
 
 ### Arguments
 
+* `-h, --help`: Show the help menu and exit.
+
 Positional:
 
 * `--query:` Search term (required).
 
 Optional:
 
-* `--language:` Programming language filter.
-* `--user:` Search in all repositories of a specific user.
-* `--repo:` Search in a specific repository (e.g., username/repo).
-* `--path:` Specify path specifier for filtering.
-* `--token:` GitHub Personal Access Token (or set GITHUB_TOKEN environment variable).
-* `--max-result:` Limit the search results to show or download.
-* `--download:` Download matched files.
-* `--download-dir:` Download directory for downloading the matched files.
+* `-l, --language:` Programming language filter.
+* `-u,  --user:` Search in all repositories of a specific user.
+* `-r, --repo:` Search in a specific repository (e.g., username/repo).
+* `-p, --path:` Specify path specifier for filtering.
+* `-t, --token:` GitHub Personal Access Token (or set GITHUB_TOKEN environment variable).
+* `-m, --max-result:` Limit the search results to show or download.
+* `-d, --download:` Download matched files.
+* `-dd, --download-dir:` Download directory for downloading the matched files.
+* `-v, --verbose`: Verbose logging for matched files.
 
 GITHUB_TOKEN can be generated from https://github.com/settings/tokens
 
@@ -68,7 +71,7 @@ ghcs 'def main' --language 'python' --user 'hissain' --path '*.py' --download --
 ```
 
 ```bash
-ghcs "def main()" --user hissain --max-results 3 --download
+ghcs "def train()" path llm --max-results 3 --download
 ```
 
 ## License
