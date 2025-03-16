@@ -12,6 +12,7 @@ def main():
     parser.add_argument("--language", help="Programming language filter.")
     parser.add_argument("--user", help="Search in all repositories of a specific user.")
     parser.add_argument("--repo", help="Search in a specific repository (e.g., username/repo).")
+    parser.add_argument("--path", help="Speficy path speficier for filtering.")
     parser.add_argument("--token", help="GitHub Personal Access Token (or set GITHUB_TOKEN env var).")
     parser.add_argument("--download", action="store_true", help="Download matched files.")
 
@@ -22,7 +23,8 @@ def main():
         print("Error: GitHub token is required. Set via --token or GITHUB_TOKEN env var.")
         return
 
-    results = search_github(args.query, args.user, args.language, args.repo, token)
+    results = search_github(args.query, args.user, 
+                            args.language, args.repo, args.path, token)
 
     print(f"Found {len(results)} matching files.")
     
