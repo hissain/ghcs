@@ -1,8 +1,8 @@
 import argparse
 import os
 import dotenv
-from ghs.search import search_github
-from ghs.downloader import download_file
+from ghcs.search import search_github
+from ghcs.downloader import download_file
 
 dotenv.load_dotenv()
 
@@ -12,7 +12,8 @@ def main():
     parser.add_argument("--language", help="Programming language filter.")
     parser.add_argument("--user", help="Search in all repositories of a specific user.")
     parser.add_argument("--repo", help="Search in a specific repository (e.g., username/repo).")
-    parser.add_argument("--path", help="Speficy path speficier for filtering.")
+    parser.add_argument("--path", help="Specify path specifier for filtering.")
+    parser.add_argument("--max-results", type=int, help="Maximum number of results to return.")
     parser.add_argument("--token", help="GitHub Personal Access Token (or set GITHUB_TOKEN env var).")
     parser.add_argument("--download", action="store_true", help="Download matched files.")
 
@@ -23,8 +24,16 @@ def main():
         print("Error: GitHub token is required. Set via --token or GITHUB_TOKEN env var.")
         return
 
-    results = search_github(args.query, args.user, 
-                            args.language, args.repo, args.path, token)
+    print(f"Searching GitHub for: {args.query}")
+    results = search_github(
+        query=args.query,
+        user=args.user,
+        repo=args.repo,
+        language=args.language,
+        path=args.path,
+        max_results=args.max_results,
+        token=token
+    )
 
     print(f"Found {len(results)} matching files.")
     

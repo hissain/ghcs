@@ -1,6 +1,6 @@
-# GitHub Code Search CLI (ghs)
+# GitHub Code Search CLI (ghcs)
 
-`ghs` is a command-line interface (CLI) tool for searching code on GitHub and downloading matched files. It allows you to search for code snippets, filter by language, user, repository, and path, and optionally download the matched files. This is effective utility specially when developers are on CLI non ui environment (i.e. on remote desktop).
+`ghcs` is a command-line interface (CLI) tool for searching code on GitHub and downloading matched files. It allows you to search for code snippets, filter by language, user, repository, and path, and optionally download the matched files. This is effective utility specially when developers are on CLI non ui environment (i.e. on remote desktop).
 
 ## Features
 
@@ -10,34 +10,34 @@
 
 ## Installation
 
-To install `ghs`, clone the repository and install the dependencies:
+To install `ghcs`, clone the repository and install the dependencies:
 
 ```sh
-git clone https://github.com/hissain/ghs.git
-cd ghs
+git clone https://github.com/hissain/ghcs.git
+cd ghcs
 pip install -r requirements.txt
 ```
 
 ## Usage
 
-To use the `ghs` CLI, you need a GitHub Personal Access Token. You can set it via the `--token` argument or the `GITHUB_TOKEN` environment variable.
+To use the `ghcs` CLI, you need a GitHub Personal Access Token. You can set it via the `--token` argument or the `GITHUB_TOKEN` environment variable.
 
 ### Basic Search
 
 ```bash
-ghs --query 'search_term' --token YOUR_GITHUB_TOKEN
+ghcs --query 'search_term' --token YOUR_GITHUB_TOKEN
 ```
 
 ### Search with Filters
 
 ```bash
-ghs --query 'search_term' --user 'username' --repo 'username/repo' --language 'python' --path '*.py' --token YOUR_GITHUB_TOKEN
+ghcs --query 'search_term' --user 'username' --repo 'username/repo' --language 'python' --path '*.py' --token YOUR_GITHUB_TOKEN --max-results MAX_RESULT_COUNT
 ```
 
 ### Download Matched Files
 
 ```bash
-ghs --query 'search_term' --download --token YOUR_GITHUB_TOKEN
+ghcs --query 'search_term' --download --token YOUR_GITHUB_TOKEN
 ```
 
 ### Arguments
@@ -49,10 +49,15 @@ ghs --query 'search_term' --download --token YOUR_GITHUB_TOKEN
 * `--path:` Specify path specifier for filtering.
 * `--token:` GitHub Personal Access Token (or set GITHUB_TOKEN environment variable).
 * `--download:` Download matched files.
+* `--max-result:` Limit the search results to show or download.
 
 ### Example
 ```bash
-ghs --query 'def main' --language 'python' --user 'hissain' --path '*.py' --download --token YOUR_GITHUB_TOKEN
+ghcs --query 'def main' --language 'python' --user 'hissain' --path '*.py' --download --token YOUR_GITHUB_TOKEN --max-results 5
+```
+
+```bash
+ghcs --query "def main()" --user hissain --max-results 3 --download
 ```
 
 ## License
