@@ -84,7 +84,8 @@ __Optional:__
 * `-h, --help`: Show the help menu and exit.
 
 GITHUB_TOKEN can be generated from https://github.com/settings/tokens
-GEMINI_API_KEY can be obtained from Google AI Studio.
+
+GEMINI_API_KEY can be obtained from Google AI Studio, https://aistudio.google.com/apikey .
 
 ### Example
 ```bash
@@ -101,7 +102,7 @@ ghcs "def train()" --path llm --max-results 3 --download
 
 With AI-powered code extraction:
 ```bash
-ghcs "def train()" --path llm --download --remark "extract only the forward pass function" --output-file forward_pass.py
+ghcs "def train LoRA" --path llm --download --remark "extract only the forward pass function" --output-file forward_pass.py --max-results 5
 ```
 
 ## License
