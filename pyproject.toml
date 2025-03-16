@@ -1,10 +1,6 @@
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "ghcs"
-version = "0.1.0"
+version = "0.1.1"
 description = "GitHub Code Search CLI with file downloading capability."
 authors = [{ name = "Md. Sazzad Hissain Khan", email = "hissain.khan@gmail.com" }]
 license = { text = "MIT" }
@@ -14,6 +10,7 @@ dependencies = [
     "requests",
     "python-dotenv"
 ]
+dynamic = ["classifiers"]
 
 [project.urls]
 Homepage = "https://github.com/hissain/ghcs"
@@ -28,3 +25,6 @@ packages = ["ghcs"]
 
 [tool.setuptools.package-data]
 ghcs = ["*.md", "*.txt"]
+
+[tool.setuptools.dynamic]
+classifiers = {file = "classifiers.txt"}
