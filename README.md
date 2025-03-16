@@ -10,12 +10,15 @@
 
 ## Installation
 
-To install `ghcs`, clone the repository and install the dependencies:
+To install `ghcs`, simply use direct pip:
+```bash
+pip install gscs
+```
 
-```sh
-git clone https://github.com/hissain/ghcs.git
-cd ghcs
-pip install -r requirements.txt
+or for most updated, directly from Github, using
+
+```bash
+pip install git+https://github.com/hissain/ghcs.git
 ```
 
 ## Usage
