@@ -4,7 +4,7 @@ setup(
     name="ghs",
     version="0.0.1",
     packages=find_packages(),
-    install_requires=["requests"],
+    install_requires=["requests", "dotenv"],
     entry_points={"console_scripts": ["ghs=ghs.cli:main"]},
     author="Md. Sazzad Hissain Khan",
     author_email='hissain.khan@gmail.com',
