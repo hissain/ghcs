@@ -52,6 +52,8 @@ ghcs --query 'search_term' --download --token YOUR_GITHUB_TOKEN
 * `--download:` Download matched files.
 * `--download-dir:` Download directory for downloading the matched files.
 
+GITHUB_TOKEN can be generated from https://github.com/settings/tokens
+
 ### Example
 ```bash
 ghcs --query 'def main' --language 'python' --user 'hissain' --path '*.py' --download --token YOUR_GITHUB_TOKEN --max-results 5
