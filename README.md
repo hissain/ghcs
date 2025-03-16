@@ -1,6 +1,6 @@
 # GitHub Code Search CLI (ghs)
 
-`ghs` is a command-line interface (CLI) tool for searching code on GitHub and downloading matched files. It allows you to search for code snippets, filter by language, user, repository, and path, and optionally download the matched files.
+`ghs` is a command-line interface (CLI) tool for searching code on GitHub and downloading matched files. It allows you to search for code snippets, filter by language, user, repository, and path, and optionally download the matched files. This is effective utility specially when developers are on CLI non ui environment (i.e. on remote desktop).
 
 ## Features
 
@@ -50,7 +50,7 @@ ghs --query 'search_term' --download --token YOUR_GITHUB_TOKEN
 * `--token:` GitHub Personal Access Token (or set GITHUB_TOKEN environment variable).
 * `--download:` Download matched files.
 
-###Example
+### Example
 ```bash
 ghs --query 'def main' --language 'python' --user 'hissain' --path '*.py' --download --token YOUR_GITHUB_TOKEN
 ```
