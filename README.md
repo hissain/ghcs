@@ -31,10 +31,14 @@ To use the `ghcs` CLI, you need a GitHub Personal Access Token. You can set it v
 ghcs 'search_term' --token YOUR_GITHUB_TOKEN
 ```
 
+```bash
+ghcs 'search_term' # when GITHUB_TOKEN is already set in .env
+```
+
 ### Search with Filters
 
 ```bash
-ghcs 'search_term' --user 'username' --repo 'username/repo' --language 'python' --path '*.py' --token YOUR_GITHUB_TOKEN --max-results MAX_RESULT_COUNT
+ghcs 'search_term' --user 'username' --repo 'username/repo' --language 'python' --path 'llama/train' --token YOUR_GITHUB_TOKEN --max-results MAX_RESULT_COUNT
 ```
 
 ### Download Matched Files
@@ -45,13 +49,11 @@ ghcs 'search_term' --download --token YOUR_GITHUB_TOKEN
 
 ### Arguments
 
-* `-h, --help`: Show the help menu and exit.
+__Positional:__
 
-Positional:
+* `query:` Search term as an string (required).
 
-* `--query:` Search term (required).
-
-Optional:
+__Optional:__
 
 * `-l, --language:` Programming language filter.
 * `-u,  --user:` Search in all repositories of a specific user.
@@ -62,12 +64,17 @@ Optional:
 * `-d, --download:` Download matched files.
 * `-dd, --download-dir:` Download directory for downloading the matched files.
 * `-v, --verbose`: Verbose logging for matched files.
+* `-h, --help`: Show the help menu and exit.
 
 GITHUB_TOKEN can be generated from https://github.com/settings/tokens
 
 ### Example
 ```bash
-ghcs 'def main' --language 'python' --user 'hissain' --path '*.py' --download --token YOUR_GITHUB_TOKEN --max-results 5
+ghcs 'def train(' --language 'python' --user 'hissain' --path 'llama/train' --download --token YOUR_GITHUB_TOKEN --max-results 5
+
+OR
+
+ghcs 'def train(' -l 'python' -p 'llama/train' -d -m 10
 ```
 
 ```bash
