@@ -9,6 +9,8 @@ setup(
     author="Md. Sazzad Hissain Khan",
     author_email='hissain.khan@gmail.com',
     description="GitHub Code Search CLI with file downloading capability.",
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     url='https://github.com/hissain/ghcs',
     classifiers=[
         "Programming Language :: Python :: 3",
