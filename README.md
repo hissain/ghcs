@@ -12,7 +12,7 @@
 
 To install `ghcs`, simply use direct pip:
 ```bash
-pip install gscs
+pip install ghcs
 ```
 
 or for most updated, directly from Github, using
