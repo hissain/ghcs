@@ -2,9 +2,9 @@ from setuptools import setup, find_packages
 
 setup(
     name="ghcs",
-    version="0.0.1",
+    version="0.0.2",
     packages=find_packages(),
-    install_requires=["requests", "dotenv"],
+    install_requires=["requests", "python-dotenv"],
     entry_points={"console_scripts": ["ghcs=ghcs.cli:main"]},
     author="Md. Sazzad Hissain Khan",
     author_email='hissain.khan@gmail.com',
