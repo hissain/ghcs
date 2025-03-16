@@ -16,6 +16,7 @@ def main():
     parser.add_argument("--max-results", type=int, help="Maximum number of results to return.")
     parser.add_argument("--token", help="GitHub Personal Access Token (or set GITHUB_TOKEN env var).")
     parser.add_argument("--download", action="store_true", help="Download matched files.")
+    parser.add_argument("--download-dir", default="codes", help="Directory to save downloaded files.")
 
     args = parser.parse_args()
     token = args.token or os.getenv("GITHUB_TOKEN")
@@ -42,7 +43,7 @@ def main():
         file_path = item["path"]
 
         if args.download:
-            download_file(file_url, file_path, token)
+            download_file(file_url, file_path, token, args.download_dir)
         else:
             print(f"Matched file: {file_path} (URL: {file_url})")
 

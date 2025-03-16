@@ -48,8 +48,9 @@ ghcs --query 'search_term' --download --token YOUR_GITHUB_TOKEN
 * `--repo:` Search in a specific repository (e.g., username/repo).
 * `--path:` Specify path specifier for filtering.
 * `--token:` GitHub Personal Access Token (or set GITHUB_TOKEN environment variable).
-* `--download:` Download matched files.
 * `--max-result:` Limit the search results to show or download.
+* `--download:` Download matched files.
+* `--download-dir:` Download directory for downloading the matched files.
 
 ### Example
 ```bash
