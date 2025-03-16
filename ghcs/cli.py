@@ -45,7 +45,7 @@ def main():
         if args.download:
             download_file(file_url, file_path, token, args.download_dir)
         else:
-            print(f"Matched file: {file_path} (URL: {file_url})")
+            print(f"Matched file: {file_path}")
 
 if __name__ == "__main__":
     main()
