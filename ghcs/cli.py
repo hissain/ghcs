@@ -8,7 +8,7 @@ dotenv.load_dotenv()
 
 def main():
     parser = argparse.ArgumentParser(description="Search GitHub code and download matched files.")
-    parser.add_argument("--query", required=True, help="Search term.")
+    parser.add_argument("query", nargs="?", help="Search term.")
     parser.add_argument("--language", help="Programming language filter.")
     parser.add_argument("--user", help="Search in all repositories of a specific user.")
     parser.add_argument("--repo", help="Search in a specific repository (e.g., username/repo).")
@@ -23,6 +23,10 @@ def main():
 
     if not token:
         print("Error: GitHub token is required. Set via --token or GITHUB_TOKEN env var.")
+        return
+
+    if not args.query:
+        print("Error: Search term is required.")
         return
 
     print(f"Searching GitHub for: {args.query}")

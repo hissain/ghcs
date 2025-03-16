@@ -28,24 +28,29 @@ To use the `ghcs` CLI, you need a GitHub Personal Access Token. You can set it v
 ### Basic Search
 
 ```bash
-ghcs --query 'search_term' --token YOUR_GITHUB_TOKEN
+ghcs 'search_term' --token YOUR_GITHUB_TOKEN
 ```
 
 ### Search with Filters
 
 ```bash
-ghcs --query 'search_term' --user 'username' --repo 'username/repo' --language 'python' --path '*.py' --token YOUR_GITHUB_TOKEN --max-results MAX_RESULT_COUNT
+ghcs 'search_term' --user 'username' --repo 'username/repo' --language 'python' --path '*.py' --token YOUR_GITHUB_TOKEN --max-results MAX_RESULT_COUNT
 ```
 
 ### Download Matched Files
 
 ```bash
-ghcs --query 'search_term' --download --token YOUR_GITHUB_TOKEN
+ghcs 'search_term' --download --token YOUR_GITHUB_TOKEN
 ```
 
 ### Arguments
 
+Positional:
+
 * `--query:` Search term (required).
+
+Optional:
+
 * `--language:` Programming language filter.
 * `--user:` Search in all repositories of a specific user.
 * `--repo:` Search in a specific repository (e.g., username/repo).
@@ -59,11 +64,11 @@ GITHUB_TOKEN can be generated from https://github.com/settings/tokens
 
 ### Example
 ```bash
-ghcs --query 'def main' --language 'python' --user 'hissain' --path '*.py' --download --token YOUR_GITHUB_TOKEN --max-results 5
+ghcs 'def main' --language 'python' --user 'hissain' --path '*.py' --download --token YOUR_GITHUB_TOKEN --max-results 5
 ```
 
 ```bash
-ghcs --query "def main()" --user hissain --max-results 3 --download
+ghcs "def main()" --user hissain --max-results 3 --download
 ```
 
 ## License
