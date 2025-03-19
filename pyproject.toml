@@ -21,6 +21,7 @@ Issues = "https://github.com/hissain/ghcs/issues"
 
 [project.scripts]
 ghcs = "ghcs.cli:main"
+ghcs2 = "ghcs.cli2:main"
 
 [tool.setuptools]
 packages = ["ghcs"]

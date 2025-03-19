@@ -9,7 +9,7 @@ setup(
         "google-generativeai",
         "nbconvert"
     ],
-    entry_points={"console_scripts": ["ghcs=ghcs.cli:main"]},
+    entry_points={"console_scripts": ["ghcs=ghcs.cli:main", "ghcs2=ghcs.cli2:main"]},
     author="Md. Sazzad Hissain Khan",
     author_email='hissain.khan@gmail.com',
     description="GitHub Code Search CLI with file downloading capability.",
